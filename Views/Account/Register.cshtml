@@ -11,7 +11,7 @@
 @Scripts.Render("~/bundles/bootstrap")
 
 <h2>@ViewBag.Title.</h2>
-<link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css">
+<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
@@ -64,10 +64,8 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
 
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-        crossorigin="anonymous"></script>
 
 <script type="text/javascript">
     $(function () {
@@ -100,7 +98,6 @@
 
     $('.jquery_datetimepicker').datepicker({
         dateFormat: 'dd/MM/yy',
-        minDate: 0,
         showWeeks: true,
         showStatus: true,
         highlightWeek: true,
