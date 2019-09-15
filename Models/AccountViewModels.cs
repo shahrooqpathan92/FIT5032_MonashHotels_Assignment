@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace FIT5032_MonashHotels_Assignment.Models
@@ -64,6 +65,19 @@ namespace FIT5032_MonashHotels_Assignment.Models
 
     public class RegisterViewModel
     {
+        //[Required]
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
+        [DataType(DataType.Date)]
+        [Required]
+       //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Date Of Birth")]
+        public  DateTime DateOfBirth{ get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

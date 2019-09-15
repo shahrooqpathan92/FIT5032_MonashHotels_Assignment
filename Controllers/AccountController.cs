@@ -151,7 +151,15 @@ namespace FIT5032_MonashHotels_Assignment.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    firstName = model.FirstName,
+                    lastName = model.LastName,
+                    dateOfBirth = model.DateOfBirth
+                    
+                };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
