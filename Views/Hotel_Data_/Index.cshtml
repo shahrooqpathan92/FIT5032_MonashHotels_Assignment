@@ -1,0 +1,70 @@
+﻿@model IEnumerable<FIT5032_MonashHotels_Assignment.Models.Hotel_Data>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.hotel_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hotel_description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hotel_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hotel_latitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hotel_longitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hotel_price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hotel_address)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.hotel_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hotel_description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hotel_email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hotel_latitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hotel_longitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hotel_price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hotel_address)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.hotel_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.hotel_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.hotel_id })
+        </td>
+    </tr>
+}
+
+</table>

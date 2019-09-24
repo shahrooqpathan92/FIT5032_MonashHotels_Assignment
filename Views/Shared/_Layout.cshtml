@@ -24,6 +24,13 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <!-- Only Autheniticated Admin user can see this section-->
+                    @if (User.IsInRole("Admin"))
+                    {
+                        
+                        <li>@Html.ActionLink("All Hotels", "Index", "Hotel_Data_")</li>
+                    }
+                    
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

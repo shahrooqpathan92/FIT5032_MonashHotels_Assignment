@@ -1,0 +1,75 @@
+﻿@model FIT5032_MonashHotels_Assignment.Models.Hotel_Data
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Hotel_Data</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.hotel_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hotel_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hotel_description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hotel_description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hotel_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hotel_email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hotel_latitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hotel_latitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hotel_longitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hotel_longitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hotel_price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hotel_price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hotel_address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hotel_address)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.hotel_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
