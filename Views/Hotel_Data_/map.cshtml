@@ -1,0 +1,31 @@
+﻿@model IEnumerable<FIT5032_MonashHotels_Assignment.Models.Hotel_Data>
+
+@{
+    ViewBag.Title = "Map";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Map</h2>
+
+<div id="map" style="height:300px"></div>
+<table>
+    @foreach (var item in Model)
+    {
+        <tr class="coordinates">
+            <td>@Html.DisplayFor(modelItem => item.hotel_name)</td>
+            <td class="description">
+                @Html.DisplayFor(modelItem => item.hotel_description)
+            </td>
+            <td class="latitude">
+                @Html.DisplayFor(modelItem => item.hotel_latitude)
+            </td>
+            <td class="longitude">
+                @Html.DisplayFor(modelItem => item.hotel_longitude)
+            </td>
+        </tr>
+    }
+</table>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/mapbox")
+}

@@ -20,6 +20,12 @@ namespace FIT5032_MonashHotels_Assignment.Controllers
             return View(db.Hotel_Data.ToList());
         }
 
+        //GET: Hotel_Data_/Map
+        public ActionResult Map()
+        {
+            return View(db.Hotel_Data.ToList());
+        }
+
         // GET: Hotel_Data_/Details/5
         public ActionResult Details(int? id)
         {
