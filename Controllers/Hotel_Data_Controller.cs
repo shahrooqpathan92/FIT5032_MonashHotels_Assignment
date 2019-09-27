@@ -21,9 +21,18 @@ namespace FIT5032_MonashHotels_Assignment.Controllers
         }
 
         //GET: Hotel_Data_/Map
-        public ActionResult Map()
+        public ActionResult Map(int? id)
         {
-            return View(db.Hotel_Data.ToList());
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Hotel_Data hotel_Data = db.Hotel_Data.Find(id);
+            if (hotel_Data == null)
+            {
+                return HttpNotFound();
+            }
+            return View(hotel_Data);
         }
 
         // GET: Hotel_Data_/Details/5

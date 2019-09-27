@@ -81,12 +81,14 @@
                 {
 
                     @Html.ActionLink("Edit", "Edit", new { id = item.hotel_id })
-                    <br>
+                    <br />
                     @Html.ActionLink("Delete", "Delete", new { id = item.hotel_id })
-                    <br>
+                    <br />
 
                 }
                 @Html.ActionLink("Details", "Details", new { id = item.hotel_id })
+                <br />
+                @Html.ActionLink("View in Map","Map", new { id = item.hotel_id})
             </td>
         </tr>
     }

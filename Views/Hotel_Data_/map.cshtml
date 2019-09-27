@@ -1,4 +1,4 @@
-﻿@model IEnumerable<FIT5032_MonashHotels_Assignment.Models.Hotel_Data>
+﻿@model FIT5032_MonashHotels_Assignment.Models.Hotel_Data
 
 @{
     ViewBag.Title = "Map";
@@ -9,23 +9,27 @@
 
 <div id="map" style="height:300px"></div>
 <table>
-    @foreach (var item in Model)
-    {
+   
         <tr class="coordinates">
-            <td>@Html.DisplayFor(modelItem => item.hotel_name)</td>
-            <td class="description">
-                @Html.DisplayFor(modelItem => item.hotel_description)
+            <td>@Html.DisplayFor(model => model.hotel_name)</td>
+            <td>@Html.DisplayFor(model => model.hotel_address)</td>
+            <td class="description" hidden>
+                @Html.DisplayFor(model => model.hotel_description)
             </td>
-            <td class="latitude">
-                @Html.DisplayFor(modelItem => item.hotel_latitude)
+            <td class="latitude" hidden>
+                @Html.DisplayFor(model => model.hotel_latitude)
             </td>
-            <td class="longitude">
-                @Html.DisplayFor(modelItem => item.hotel_longitude)
+            <td class="longitude" hidden>
+                @Html.DisplayFor(model => model.hotel_longitude)
             </td>
         </tr>
-    }
+    
 </table>
 
 @section Scripts {
     @Scripts.Render("~/bundles/mapbox")
 }
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
