@@ -176,6 +176,7 @@ D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\Microsoft.Owin.Securit
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\Microsoft.Web.Infrastructure.dll
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\Newtonsoft.Json.dll
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\Owin.dll
+D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\SendGrid.dll
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\System.Web.Helpers.dll
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\System.Web.Mvc.dll
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\System.Web.Optimization.dll
@@ -184,6 +185,8 @@ D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\System.Web.WebPages.De
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\System.Web.WebPages.dll
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\System.Web.WebPages.Razor.dll
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\WebGrease.dll
+D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\SendGrid.pdb
+D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\SendGrid.xml
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\System.Web.Helpers.xml
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\System.Web.Mvc.xml
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\System.Web.Optimization.xml
