@@ -208,7 +208,6 @@ D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\Microsoft.Owin.Securit
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\Microsoft.Owin.Security.OAuth.xml
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.csprojAssemblyReference.cache
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.Migrations.InitialCreate.resources
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.Migrations.additionalfields.resources
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.Migrations.dateOfBirthField.resources
@@ -218,3 +217,4 @@ D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHo
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.csproj.CopyComplete
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.dll
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.pdb
+D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.csprojAssemblyReference.cache
