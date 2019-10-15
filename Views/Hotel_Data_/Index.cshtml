@@ -7,7 +7,8 @@
 
 <h2>Index</h2>
 
-@if (User.IsInRole("Admin")) {
+@if (User.IsInRole("Admin"))
+{
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
@@ -52,45 +53,59 @@
             <th></th>
         </tr>
     </thead>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.hotel_name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.hotel_description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.hotel_email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.hotel_latitude)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.hotel_longitude)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.hotel_price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.hotel_address)
-            </td>
-            <td>
-                @if (User.IsInRole("Admin"))
-                {
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.hotel_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.hotel_description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.hotel_email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.hotel_latitude)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.hotel_longitude)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.hotel_price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.hotel_address)
+                </td>
+                <td>
+                    @if (User.IsInRole("Admin"))
+                    {
 
-                    @Html.ActionLink("Edit", "Edit", new { id = item.hotel_id })
-                    <br />
-                    @Html.ActionLink("Delete", "Delete", new { id = item.hotel_id })
-                    <br />
+                        @Html.ActionLink("Edit", "Edit", new { id = item.hotel_id })
+                        <br />
+                        @Html.ActionLink("Delete", "Delete", new { id = item.hotel_id })
+                        <br />
 
-                }
-                @Html.ActionLink("Details", "Details", new { id = item.hotel_id })
-                <br />
-                @Html.ActionLink("View in Map","Map", new { id = item.hotel_id})
-            </td>
-        </tr>
-    }
+                    }
+                    @Html.ActionLink("Details", "Details", new { id = item.hotel_id })
+                    <br />
+                    @Html.ActionLink("View in Map", "Map", new { id = item.hotel_id })
+                </td>
+            </tr>
+        }
+    </tbody>
 
 </table>
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/DataTables/jquery.dataTables.js")
+    @Scripts.Render("~/Scripts/DataTables/dataTables.bootstrap.js")
+    
+    <script> 
+        $(document).ready(function () {
+            $('.table').DataTable();
+        });
+    </script>
+}
+<link href="~/Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />

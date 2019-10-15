@@ -41,6 +41,7 @@ var map = new mapboxgl.Map({
     center: [locations[0].longitude, locations[0].latitude]
 });
 map.on('load', function () {
+    console.log("THIS IS WORKING")
     // Add a layer showing the places.
     map.addLayer({
         "id": "places",
@@ -86,4 +87,65 @@ map.on('load', function () {
     map.on('mouseleave', 'places', function () {
         map.getCanvas().style.cursor = '';
     });
+
+    var layerList = document.getElementById('menu');
+    var inputs = layerList.getElementsByTagName('input');
+
+    function switchLayer(layer) {
+        map.remove()
+        var layerId = layer.target.id;
+
+        map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/' +  layerId,
+            zoom: 11,
+            center: [locations[0].longitude, locations[0].latitude]
+        });
+
+        map.on('load', function () {
+            console.log("THIS IS WORKING")
+            // Add a layer showing the places.
+            map.addLayer({
+                "id": "places",
+                "type": "symbol",
+                "source": {
+                    "type": "geojson",
+                    "data": {
+                        "type": "FeatureCollection",
+                        "features": data
+                    }
+                },
+                "layout": {
+                    "icon-image": "{icon}",
+                    "icon-allow-overlap": true
+                }
+            });
+        });
+        //map.setStyle('mapbox://styles/mapbox/' + layerId);
+        //reloadMap();
+        
+    }
+
+    for (var i = 0; i < inputs.length; i++) {
+        inputs[i].onclick = switchLayer;
+    }
+
+    function reloadMap() {
+        map.addLayer({
+            "id": "places",
+            "type": "symbol",
+            "source": {
+                "type": "geojson",
+                "data": {
+                    "type": "FeatureCollection",
+                    "features": data
+                }
+            },
+            "layout": {
+                "icon-image": "{icon}",
+                "icon-allow-overlap": true
+            }
+        });
+    }
+
 });
