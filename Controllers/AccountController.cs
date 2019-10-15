@@ -387,7 +387,16 @@ namespace FIT5032_MonashHotels_Assignment.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    firstName = "",
+                    lastName = "",
+                    //Temporary solution for Google External Auth
+                    dateOfBirth = System.DateTime.Now
+
+               
+                };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace FIT5032_MonashHotels_Assignment.Controllers
 {
+    [RequireHttps]
     public class HomeController : Controller
     {
         public ActionResult Index()

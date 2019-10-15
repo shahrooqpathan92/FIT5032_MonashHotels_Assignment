@@ -58,11 +58,11 @@ namespace FIT5032_MonashHotels_Assignment
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "661212256647-v9i8u7a5oj4k2gkaoi9m252r771t0d1h.apps.googleusercontent.com",
+                ClientSecret = "3wrqAxK7_KJjmcFQLL5HZ1wF"
+            });
         }
     }
 }
