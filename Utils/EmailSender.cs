@@ -28,5 +28,22 @@ namespace FIT5032_MonashHotels_Assignment.Utils
             
             var response = client.SendEmailAsync(msg);
         }
+
+        public void Send_To_Many(List<EmailAddress> toEmails, String subject, String contents)
+        {
+            var client = new SendGridClient(API_KEY);
+            var from = new EmailAddress("noreply@monashhotels.com", "FIT5032 Monash Hotels");
+            var tos = toEmails;
+            var plainTextContent = contents;
+            var htmlContent = "<p>" + contents + "</p>";
+            var showAllRecipients = false;
+            var msg = MailHelper.CreateSingleEmailToMultipleRecipients(from, tos, subject, plainTextContent, htmlContent, showAllRecipients);
+            //Attachment will be added to the email form the Utils folder
+            var bytes = File.ReadAllBytes(HttpContext.Current.Server.MapPath("~/Utils/MonashEatsAttachment.txt"));
+            var file = Convert.ToBase64String(bytes);
+            msg.AddAttachment("MonashEatsAttachment.txt", file);
+
+            var response = client.SendEmailAsync(msg);
+        }
     }
 }

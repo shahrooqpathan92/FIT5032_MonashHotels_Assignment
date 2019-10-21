@@ -35,6 +35,9 @@
                     @if (User.IsInRole("Admin"))
                     {
                         <li>@Html.ActionLink("All Users", "Index", "AspNetUsers")</li>
+                        <li>@Html.ActionLink("Bulk Email", "BulkEmailList","AspNetUsers")</li>
+                        <li>@Html.ActionLink("Send Email", "Send_Email","Home")</li>
+                        //<li>@Html.ActionLink()</li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")

@@ -5,13 +5,20 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@Scripts.Render("~/Scripts/jquery-3.3.1.js")
+@Scripts.Render("~/Scripts/jquery.validate.min.js")
+@Scripts.Render("~/Scripts/jquery.validate.unobtrusive.min.js")
+@Scripts.Render("~/Scripts/moment.js")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+
 <h2>Edit</h2>
 
-
+<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>AspNetUser</h4>
         <hr />
@@ -133,7 +140,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.dateOfBirth, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.dateOfBirth, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.dateOfBirth, new { htmlAttributes = new { @class = "form-control jquery_datetimepicker" } })
                 @Html.ValidationMessageFor(model => model.dateOfBirth, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -153,3 +160,49 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
+<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+
+
+<script type="text/javascript">
+    $(function () {
+        console.log('Hello');
+        /*$.validator.methods.date = function (value, element) {
+            console.log('Hello2');
+            return this.optional(element) || moment(value, "MM.DD.YYYY", true).isValid();
+        } */
+
+       /* $.validator.addMethod('date',
+        function (value, element) {
+            if (this.optional(element)) {
+                return true;
+            }
+            var valid = true;
+            try {
+                $.datepicker.parseDate('dd/mm/yyyy  ', value);
+            }
+            catch (err) {
+                valid = false;
+            }
+            return valid;
+        });
+        */
+
+
+    });
+
+
+
+    $('.jquery_datetimepicker').datepicker({
+        dateFormat: 'dd/MM/yy',
+        showWeeks: true,
+        showStatus: true,
+        highlightWeek: true,
+        numberOfMonths: 1,
+        showAnim: "scale",
+        showOptions: {
+            origin: ["top", "left"]
+        },
+        timeFormat: 'hh:mm tt'
+    });
+</script>

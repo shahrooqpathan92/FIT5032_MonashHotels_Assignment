@@ -20,6 +20,19 @@ namespace FIT5032_MonashHotels_Assignment.Controllers
             return View(db.AspNetUsers.ToList());
         }
 
+        public ActionResult BulkEmailList()
+        {
+            return View(db.AspNetUsers.ToList());
+        }
+
+       // [HttpPost]
+        public ActionResult BulkEmailList2(string id)
+        {   
+
+            ViewBag.Result = id;
+            return View("~/Views/Home/Send_Bulk_Email.cshtml");
+        }
+
         // GET: AspNetUsers/Details/5
         public ActionResult Details(string id)
         {

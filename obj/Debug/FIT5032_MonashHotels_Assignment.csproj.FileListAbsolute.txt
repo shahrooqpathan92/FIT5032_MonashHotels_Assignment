@@ -108,6 +108,8 @@ D:\dev\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment
 D:\dev\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.Migrations.additionalfields.resources
 D:\dev\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.Migrations.dateOfBirthField.resources
 D:\dev\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.Migrations.dateOfBirthField1.resources
+D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.csproj.GenerateResource.cache
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\FIT5032_MonashHotels_Assignment.dll.config
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\FIT5032_MonashHotels_Assignment.dll
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\FIT5032_MonashHotels_Assignment.pdb
@@ -131,7 +133,6 @@ D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\roslyn\Microsoft.Visua
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\roslyn\System.AppContext.dll
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\roslyn\System.Collections.Immutable.dll
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\roslyn\System.Console.dll
-D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\roslyn\System.Diagnostics.StackTrace.dll
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\roslyn\System.IO.Compression.dll
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\roslyn\System.IO.FileSystem.dll
@@ -215,7 +216,6 @@ D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHo
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.Migrations.additionalfields.resources
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.Migrations.dateOfBirthField.resources
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.Migrations.dateOfBirthField1.resources
-D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.csproj.GenerateResource.cache
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.csproj.CoreCompileInputs.cache
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.csproj.CopyComplete
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.dll
