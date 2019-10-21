@@ -9,7 +9,7 @@ namespace FIT5032_MonashHotels_Assignment.Models
 
     public class SendBulkEmailViewModel
     {
-        public List<EmailAddress> tos { get; set; }
+        public string tos { get; set; }
 
         [Required(ErrorMessage = "Please enter a subject.")]
         public string Subject { get; set; }

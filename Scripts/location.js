@@ -31,6 +31,7 @@ for (i = 0; i < locations.length; i++) {
             "coordinates": [locations[i].longitude, locations[i].latitude]
         }
     };
+    console.log(locations[i])
     data.push(feature)
 }
 mapboxgl.accessToken = TOKEN;
@@ -42,6 +43,7 @@ var map = new mapboxgl.Map({
 });
 map.on('load', function () {
     console.log("THIS IS WORKING")
+    console.log(data);
     // Add a layer showing the places.
     map.addLayer({
         "id": "places",

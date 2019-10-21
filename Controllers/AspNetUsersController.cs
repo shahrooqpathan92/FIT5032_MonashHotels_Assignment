@@ -27,9 +27,11 @@ namespace FIT5032_MonashHotels_Assignment.Controllers
 
        // [HttpPost]
         public ActionResult BulkEmailList2(string id)
-        {   
-
+        {
+            //id = "XD";
             ViewBag.Result = id;
+            
+            ViewBag.Test = "TEST";
             return View("~/Views/Home/Send_Bulk_Email.cshtml");
         }
 

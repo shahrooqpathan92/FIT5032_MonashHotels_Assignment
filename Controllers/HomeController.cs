@@ -44,6 +44,7 @@ namespace FIT5032_MonashHotels_Assignment.Controllers
                 try
                 {
                     var toss = model.tos;
+                    Console.WriteLine(model.tos);
                     var tos = new List<EmailAddress>
                     {
                         new EmailAddress("shahrooq.pathan@gmail.com", "Example User1"),

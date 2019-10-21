@@ -5,12 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 <h2>Index</h2>
 
 @using (Html.BeginForm())
 {
     if (@ViewBag.Result != null)
     {
+       
         <div class="alert alert-info">@ViewBag.Result</div>
     }
     <table class="table">
@@ -38,9 +40,9 @@
             <tr>
                 <td>
 
-                    @Html.CheckBox(item.Email, htmlAttributes: new { @id = item.Email })
+                    @Html.CheckBox("isUserSelected", htmlAttributes: new { @value = item.Email, @class = "checkbox" })
                 </td>
-                <td>
+                <td class="userEmail">
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
                 <td>
@@ -50,18 +52,45 @@
                     @Html.DisplayFor(modelItem => item.firstName)
                 </td>
                 <td>
-                    1
+
                     @Html.DisplayFor(modelItem => item.lastName)
                 </td>
             </tr>
+
         }
 
     </table>
-    @Html.ActionLink("Next", "BulkEmailList2", new { id = "2232a97e-c434-45fa-b5b2-224c581eba48" })
+    @*@Html.ActionLink("Next", "BulkEmailList2", new { id = "2232a97e-c434-45fa-b5b2-224c581eba48" })*@
+    //<span><a href="<%=Url.Action(" Next", "BulkEmailList2" )%>?id=' + data.id + '"></a></span>
+    <a id="sendBulkEmail" href="/AspNetUsers/BulkEmailList2">Next</a>
     <div class="form-group">
+        <p id="selectedEmails">No Emails Selected!</p>
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Next" class="btn btn-default" />
         </div>
     </div>
 
 }
+
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+
+    $('.checkbox').change(function () {
+        var emails = "";
+        var selected = $('.checkbox:checked');
+        //Getting all the checkboxes checked
+        $.each(selected, function (index, item) {
+            var row = $(this).closest('tr')
+            emails += row.find('.userEmail').text().trim()
+            emails += ","
+            //console.log("Hello");
+        })
+        console.log(emails);
+        $('#selectedEmails').text(emails);
+
+        var a = document.getElementById('sendBulkEmail');
+        a.href = "/AspNetUsers/BulkEmailList2?id=" + encodeURIComponent(emails);
+        //a.href = "/AspNetUsers/BulkEmailList2/HEYTHERE"
+    });
+</script>
