@@ -220,3 +220,4 @@ D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHo
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.csproj.CopyComplete
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.dll
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.pdb
+D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.csprojAssemblyReference.cache

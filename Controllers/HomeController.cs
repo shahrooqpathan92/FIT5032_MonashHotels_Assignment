@@ -43,14 +43,22 @@ namespace FIT5032_MonashHotels_Assignment.Controllers
             {
                 try
                 {
-                    var toss = model.tos;
-                    Console.WriteLine(model.tos);
-                    var tos = new List<EmailAddress>
+                    //var toss = model.tos;
+
+                    string[] emailList = model.tos.Split(',');
+
+                    var tos = new List<EmailAddress>();
+
+                    //Adding emaail list to tos arryalist tos
+                    for (int i = 0; i < emailList.Length; i++)
                     {
-                        new EmailAddress("shahrooq.pathan@gmail.com", "Example User1"),
-                        new EmailAddress("spat0023@student.monash.edu", "Example User2"),
-          
-                    };
+                        if (emailList[i].Trim().Length != 0)
+                        {
+                            tos.Add(new EmailAddress(emailList[i], emailList[i]));
+                        }
+                        
+                    }
+
                     String subject = model.Subject;
                     String contents = model.Contents;
                     EmailSender es = new EmailSender();
