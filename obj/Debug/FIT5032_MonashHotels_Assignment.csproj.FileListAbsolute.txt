@@ -108,7 +108,6 @@ D:\dev\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment
 D:\dev\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.Migrations.additionalfields.resources
 D:\dev\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.Migrations.dateOfBirthField.resources
 D:\dev\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.Migrations.dateOfBirthField1.resources
-D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\EntityFramework.xml
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\FIT5032_MonashHotels_Assignment.dll.config
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\FIT5032_MonashHotels_Assignment.dll
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\FIT5032_MonashHotels_Assignment.pdb
@@ -197,6 +196,7 @@ D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\System.Web.WebPages.De
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\System.Web.WebPages.Razor.xml
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\Newtonsoft.Json.xml
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\Antlr3.Runtime.pdb
+D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\EntityFramework.xml
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\EntityFramework.SqlServer.xml
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\Microsoft.AspNet.Identity.Core.xml
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\Microsoft.AspNet.Identity.Owin.xml
@@ -211,6 +211,7 @@ D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\Microsoft.Owin.Securit
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\Microsoft.Owin.Security.OAuth.xml
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.csprojAssemblyReference.cache
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.Migrations.InitialCreate.resources
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.Migrations.additionalfields.resources
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.Migrations.dateOfBirthField.resources
@@ -220,4 +221,3 @@ D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHo
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.csproj.CopyComplete
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.dll
 D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.pdb
-D:\dev\ASSIGNMENT_IAD\FIT5032_MonashHotels_Assignment\obj\Debug\FIT5032_MonashHotels_Assignment.csprojAssemblyReference.cache

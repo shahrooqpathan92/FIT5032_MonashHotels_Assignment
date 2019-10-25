@@ -1,0 +1,58 @@
+﻿@model IEnumerable<FIT5032_MonashHotels_Assignment.Models.Booking>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.booking_start_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.booking_end_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hotel_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.booking_places)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.booking_start_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.booking_end_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.user_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hotel_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.booking_places)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.booking_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.booking_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.booking_id })
+        </td>
+    </tr>
+}
+
+</table>

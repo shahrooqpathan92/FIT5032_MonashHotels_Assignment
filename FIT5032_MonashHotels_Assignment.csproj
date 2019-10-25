@@ -208,6 +208,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AspNetUsersController.cs" />
+    <Compile Include="Controllers\BookingsController.cs" />
     <Compile Include="Controllers\BulkEmailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Hotel_Data_Controller.cs" />
@@ -237,6 +238,9 @@
     <Compile Include="Models\AllUsers.cs" />
     <Compile Include="Models\AspNetRole.cs" />
     <Compile Include="Models\AspNetUser.cs" />
+    <Compile Include="Models\BookingViewModel.cs" />
+    <Compile Include="Models\Booking.cs" />
+    <Compile Include="Models\BookingModel.cs" />
     <Compile Include="Models\Hotel_Data.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Image.cs" />
@@ -738,6 +742,11 @@
     <Content Include="Scripts\tinymce\langs\readme.md" />
     <Content Include="Views\AspNetUsers\BulkEmailList.cshtml" />
     <Content Include="Views\Home\Send_Bulk_Email.cshtml" />
+    <Content Include="Views\Bookings\Create.cshtml" />
+    <Content Include="Views\Bookings\Delete.cshtml" />
+    <Content Include="Views\Bookings\Details.cshtml" />
+    <Content Include="Views\Bookings\Edit.cshtml" />
+    <Content Include="Views\Bookings\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
