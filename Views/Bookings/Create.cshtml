@@ -5,85 +5,128 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+@Scripts.Render("~/Scripts/jquery-3.3.1.js")
+<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+@Scripts.Render("~/Scripts/jquery.validate.min.js")
+@Scripts.Render("~/Scripts/jquery.validate.unobtrusive.min.js")
+@*@Scripts.Render("~/Scripts/moment.js")*@
+@*@Scripts.Render("~/bundles/jquery")*@
+@Scripts.Render("~/bundles/bootstrap")
+
 <h2>Create</h2>
+<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
 
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-<div class="form-horizontal">
-    <h4>Booking</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @*<div class="form-group">
-            @Html.LabelFor(model => model.booking_id, htmlAttributes: new { @class = "control-label col-md-2" })
+
+    if (@ViewBag.Failure != null)
+    {
+        <div class="alert alert-danger">@ViewBag.Failure</div>
+    }
+
+    <div class="form-horizontal">
+        <h4>Booking</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.booking_id, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.booking_id, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.booking_id, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.booking_start_date, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.booking_id, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.booking_id, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(model => model.booking_start_date, new { @class = "form-control jquery_datetimepicker_from" })
+                @Html.ValidationMessageFor(model => model.booking_start_date, "", new { @class = "text-danger" })
             </div>
-        </div>*@
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.booking_start_date, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.booking_start_date, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.booking_start_date, "", new { @class = "text-danger" })
         </div>
-    </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.booking_end_date, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.booking_end_date, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.booking_end_date, "", new { @class = "text-danger" })
-        </div>
-    </div>
+        
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.user_id, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.user_id, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.user_id, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    @*<div class="form-group">
-            @Html.LabelFor(model => model.hotel_id, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.booking_end_date, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.hotel_id, new SelectList(Model.hotel_id.ToList(), "hotel_id", "hotel_id_name"))
+                @Html.TextBoxFor(model => model.booking_end_date, new { @class = "form-control jquery_datetimepicker_to" })
+                @Html.ValidationMessageFor(model => model.booking_end_date, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+      
+        <div class="form-group">
+            @Html.LabelFor(model => model.hotelList, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.hotel_id, Model.hotelList, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.hotel_id, "", new { @class = "text-danger" })
             </div>
-        </div>*@
+        </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.hotelList, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownListFor(model => model.hotel_id, Model.hotelList, new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.hotel_id, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.booking_places, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.booking_places, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.booking_places, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
         </div>
     </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.booking_places, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.booking_places, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.booking_places, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
-        </div>
-    </div>
-</div>
 }
 
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+@*@section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@
+
+
+
+<script type="text/javascript">
+
+    $(function () {
+
+        //reference: http://jsfiddle.net/rvaldez/YdeY8/
+        $('.jquery_datetimepicker_from').datepicker({
+            dateFormat: 'dd/MM/yy',
+            showWeeks: true,
+            showStatus: true,
+            highlightWeek: true,
+            numberOfMonths: 1,
+            showAnim: "scale",
+            showOptions: {
+                origin: ["top", "left"]
+            },
+            timeFormat: 'hh:mm tt',
+            onSelect: function (selected) {
+                $('.jquery_datetimepicker_to').datepicker("option", "minDate", selected)
+            }
+        });
+
+        $('.jquery_datetimepicker_to').datepicker({
+            dateFormat: 'dd/MM/yy',
+            showWeeks: true,
+            showStatus: true,
+            highlightWeek: true,
+            numberOfMonths: 1,
+            showAnim: "scale",
+            showOptions: {
+                origin: ["top", "left"]
+            },
+            timeFormat: 'hh:mm tt',
+            onSelect: function (selected) {
+                $('.jquery_datetimepicker_from').datepicker("option", "maxDate", selected)
+            }
+        });
+    });
+
+</script>

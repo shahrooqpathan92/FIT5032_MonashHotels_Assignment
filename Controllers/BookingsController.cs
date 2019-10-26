@@ -53,10 +53,14 @@ namespace FIT5032_MonashHotels_Assignment.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "booking_id,booking_start_date,booking_end_date,user_id,hotel_id,booking_places")] BookingViewModel booking)
         {
-            
-           
-           // if (ModelState.IsValid)
+
+
+            // if (ModelState.IsValid)
             //{
+            try
+            {
+
+
                 Booking bk = new Booking();
                 bk.hotel_id = booking.hotel_id;
                 bk.booking_places = booking.booking_places;
@@ -68,9 +72,20 @@ namespace FIT5032_MonashHotels_Assignment.Controllers
                 db.Bookings.Add(bk);
                 db.SaveChanges();
                 return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                
+                var model = new BookingViewModel
+                {
+                    hotelList = dm.Hotel_Data.Select(p => new SelectListItem { Text = p.hotel_name, Value = p.hotel_id.ToString() }).ToList()
+                };
+                ViewBag.Failure = "You already have a booking for that date. Please choose a different date";
+                return View(model);
+            }
             //}
 
-            //return View(booking);
+            
         }
 
         // GET: Bookings/Edit/5

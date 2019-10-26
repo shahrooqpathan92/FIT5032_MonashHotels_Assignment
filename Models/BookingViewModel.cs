@@ -24,9 +24,9 @@ namespace FIT5032_MonashHotels_Assignment.Models
         [Display(Name = "Booking End Date")]
         public DateTime booking_end_date { get; set; }
 
-        [Required]
+       /* [Required]
         [Display(Name = "User id")]
-        public string user_id { get; set; }
+        public string user_id { get; set; }*/
 
         //public ICollection<Hotel_Data> hotel_id { get; set; }
         public int hotel_id { get; set; }
