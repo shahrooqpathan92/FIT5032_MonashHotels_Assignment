@@ -10,7 +10,6 @@ namespace FIT5032_MonashHotels_Assignment.Models
     public partial class Booking
     {
         [Key]
-        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int booking_id { get; set; }
 
         public DateTime booking_start_date { get; set; }
