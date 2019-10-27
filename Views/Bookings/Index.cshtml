@@ -7,8 +7,13 @@
 
 <h2>Index</h2>
 
+@if (@ViewBag.Result != null)
+{
+    <div class="alert alert-info">@ViewBag.Result</div>
+}
+
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Book a Hotel!", "Create")
 </p>
 <table class="table">
     <tr>
@@ -30,29 +35,38 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.booking_start_date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.booking_end_date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.user_id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.hotel_id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.booking_places)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.booking_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.booking_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.booking_id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.booking_start_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.booking_end_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hotel_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.booking_places)
+            </td>
+            <td>
+                @if (User.IsInRole("Admin"))
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = item.booking_id }) <b>|</b>
+
+                }
+                @Html.ActionLink("Details", "Details", new { id = item.booking_id }) <b>|</b>
+                @Html.ActionLink("Delete", "Delete", new { id = item.booking_id }) <b>|</b>
+                @Html.ActionLink("Rate Hotel", "Rate", new { id = item.hotel_id })
+
+            </td>
+        </tr>
+    }
 
 </table>
+
+

@@ -68,33 +68,11 @@
 
 
 <script type="text/javascript">
-    $(function () {
-        console.log('Hello');
-        /*$.validator.methods.date = function (value, element) {
-            console.log('Hello2');
-            return this.optional(element) || moment(value, "MM.DD.YYYY", true).isValid();
-        } */
 
-       /* $.validator.addMethod('date',
-        function (value, element) {
-            if (this.optional(element)) {
-                return true;
-            }
-            var valid = true;
-            try {
-                $.datepicker.parseDate('dd/mm/yyyy  ', value);
-            }
-            catch (err) {
-                valid = false;
-            }
-            return valid;
-        });
-        */
-
-
-    });
-
-
+    //For restricting 18 year of age: ref: https://jsfiddle.net/z13au9t6/15/
+    var maxBirthdayDate = new Date();
+    maxBirthdayDate.setFullYear( maxBirthdayDate.getFullYear() - 18 );
+    maxBirthdayDate.setMonth(11, 31)
 
     $('.jquery_datetimepicker').datepicker({
         dateFormat: 'dd/MM/yy',
@@ -106,6 +84,9 @@
         showOptions: {
             origin: ["top", "left"]
         },
-        timeFormat: 'hh:mm tt'
+        changeMonth: true,
+        changeYear: true,
+        maxDate: maxBirthdayDate,
+        yearRange: '1950:'+maxBirthdayDate.getFullYear(),
     });
 </script>

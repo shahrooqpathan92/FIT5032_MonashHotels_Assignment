@@ -50,37 +50,55 @@
             <th>Longitutde</th>
             <th>Price</th>
             <th>Address</th>
-            <th></th>
-        </tr>
+            <th>Rating</th>
+            @if (User.IsInRole("Admin"))
+            {
+                <th>No. of ratings</th>
+            }
+                <th></th>
+            </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.hotel_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hotel_description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hotel_email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hotel_latitude)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hotel_longitude)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hotel_price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hotel_address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hotel_rating)
+            </td>
+            @if (User.IsInRole("Admin"))
+            {
                 <td>
-                    @Html.DisplayFor(modelItem => item.hotel_name)
+
+                    @Html.DisplayFor(modelItem => item.hotel_no_of_ratings)
+
+                    
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.hotel_description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.hotel_email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.hotel_latitude)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.hotel_longitude)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.hotel_price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.hotel_address)
-                </td>
+            }
                 <td>
                     @if (User.IsInRole("Admin"))
                     {
+
 
                         @Html.ActionLink("Edit", "Edit", new { id = item.hotel_id })
                         <br />
@@ -99,10 +117,11 @@
 </table>
 
 @section Scripts {
+    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/Scripts/DataTables/jquery.dataTables.js")
     @Scripts.Render("~/Scripts/DataTables/dataTables.bootstrap.js")
-    
-    <script> 
+
+    <script>
         $(document).ready(function () {
             $('.table').DataTable();
         });

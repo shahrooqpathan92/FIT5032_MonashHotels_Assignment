@@ -2,11 +2,11 @@
 
 
 @{
-    ViewBag.Title = "Send_Email";
+    ViewBag.Title = "Send Bulk Email";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Send_Bulk_Email</h2>
+<h2>@ViewBag.Title</h2>
 
 @using (Html.BeginForm("Send_Bulk_Email", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -16,21 +16,19 @@
     if (@ViewBag.Result != null)
     {
         <div class="alert alert-info" id="selectedEmails">@ViewBag.Result</div>
-        <div class="alert alert-info">@ViewBag.Test</div>
 
         var emails = ViewBag.Result.Split(',');
-        foreach (var item in emails)
-        {
-            //model => model.tos.Add(item);
-        }
+
     }
-
-
+    else
+    {
+        <div class="alert alert-warning" id="selectedEmails">No emails selects please enter them manually seperated by comma</div>
+    }
 
 
     //Reference Week 8 tutorial
     <div class="form-horizontal">
-        <h4>SendEmailViewModel</h4>
+        <h4>Please enter the subject and message</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -54,7 +52,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.tos, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.tos, new { htmlAttributes = new { @class = "form-control", @id = "bulkEmails"} })
+                @Html.EditorFor(model => model.tos, new { htmlAttributes = new { @class = "form-control", @id = "bulkEmails" } })
                 @Html.ValidationMessageFor(model => model.tos, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -68,9 +66,6 @@
     </div>
 }
 <p id="selectedEmailsInfo">No Emails Selected!</p>
-<div>
-    @Html.ActionLink("Back to Home", "Index")
-</div>
 
 
 @section Scripts {
@@ -85,10 +80,9 @@
 
         $(document).ready(function () {
             var listOfEmail = document.getElementById('selectedEmails').innerText;
-            console.log("HAHA:" + listOfEmail)
             $('#bulkEmails').val(listOfEmail);
 
-           // $('#selectedEmailsInfo').text(listOfEmail);
+            // $('#selectedEmailsInfo').text(listOfEmail);
 
             console.log("ready!");
         })

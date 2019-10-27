@@ -63,7 +63,7 @@ namespace FIT5032_MonashHotels_Assignment.Controllers
                     String contents = model.Contents;
                     EmailSender es = new EmailSender();
                     es.Send_To_Many(tos, subject, contents);
-                    ViewBag.Result = "Email sent to Receipents" + tos;
+                    ViewBag.Result = "Email sent to ALL Receipents!";
 
                     ModelState.Clear();
 

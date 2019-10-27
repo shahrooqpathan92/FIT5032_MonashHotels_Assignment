@@ -7,90 +7,92 @@
 
 
 <h2>Index</h2>
-
-@using (Html.BeginForm())
+@if (User.IsInRole("Admin"))
 {
-    if (@ViewBag.Result != null)
+    using (Html.BeginForm())
     {
-       
-        <div class="alert alert-info">@ViewBag.Result</div>
-    }
-    <table class="table">
-        <tr>
-            <th>
-                <input type="checkbox" />
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.firstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.lastName)
-            </th>
-            <th></th>
-        </tr>
-
-        @foreach (var item in Model)
+        if (@ViewBag.Result != null)
         {
+
+            <div class="alert alert-info">@ViewBag.Result</div>
+        }
+        <table class="table">
             <tr>
-                <td>
-
-                    @Html.CheckBox("isUserSelected", htmlAttributes: new { @value = item.Email, @class = "checkbox" })
-                </td>
-                <td class="userEmail">
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UserName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.firstName)
-                </td>
-                <td>
-
-                    @Html.DisplayFor(modelItem => item.lastName)
-                </td>
+                <th>
+                    <input type="checkbox" disabled/>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.firstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.lastName)
+                </th>
+                <th></th>
             </tr>
 
-        }
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
 
-    </table>
-    @*@Html.ActionLink("Next", "BulkEmailList2", new { id = "2232a97e-c434-45fa-b5b2-224c581eba48" })*@
-    //<span><a href="<%=Url.Action(" Next", "BulkEmailList2" )%>?id=' + data.id + '"></a></span>
-    <a id="sendBulkEmail" href="/AspNetUsers/BulkEmailList2">Next</a>
-    <div class="form-group">
-        <p id="selectedEmails">No Emails Selected!</p>
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Next" class="btn btn-default" />
-        </div>
-    </div>
+                        @Html.CheckBox("isUserSelected", htmlAttributes: new { @value = item.Email, @class = "checkbox" })
+                    </td>
+                    <td class="userEmail">
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.firstName)
+                    </td>
+                    <td>
 
+                        @Html.DisplayFor(modelItem => item.lastName)
+                    </td>
+                </tr>
+
+            }
+
+        </table>
+        @*@Html.ActionLink("Next", "BulkEmailList2", new { id = "2232a97e-c434-45fa-b5b2-224c581eba48" })*@
+        //<span><a href="<%=Url.Action(" Next", "BulkEmailList2" )%>?id=' + data.id + '"></a></span>
+        <a class="btn btn-primary" id="sendBulkEmail" href="/AspNetUsers/BulkEmailList2">Next</a>
+    }
+
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+
+        $('.checkbox').change(function () {
+            var emails = "";
+            var selected = $('.checkbox:checked');
+            //Getting all the checkboxes checked
+            $.each(selected, function (index, item) {
+                var row = $(this).closest('tr')
+                emails += row.find('.userEmail').text().trim()
+                emails += ","
+                //console.log("Hello");
+            })
+            console.log(emails);
+            $('#selectedEmails').text(emails);
+
+            var a = document.getElementById('sendBulkEmail');
+            a.href = "/AspNetUsers/BulkEmailList2?id=" + encodeURIComponent(emails);
+            //a.href = "/AspNetUsers/BulkEmailList2/HEYTHERE"
+        });
+    </script>
 }
-
-
-<script src="~/Scripts/jquery-3.3.1.min.js"></script>
-<script type="text/javascript">
-
-    $('.checkbox').change(function () {
-        var emails = "";
-        var selected = $('.checkbox:checked');
-        //Getting all the checkboxes checked
-        $.each(selected, function (index, item) {
-            var row = $(this).closest('tr')
-            emails += row.find('.userEmail').text().trim()
-            emails += ","
-            //console.log("Hello");
-        })
-        console.log(emails);
-        $('#selectedEmails').text(emails);
-
-        var a = document.getElementById('sendBulkEmail');
-        a.href = "/AspNetUsers/BulkEmailList2?id=" + encodeURIComponent(emails);
-        //a.href = "/AspNetUsers/BulkEmailList2/HEYTHERE"
-    });
-</script>
+else
+{
+    <div class="jumbotron">
+    <h1>Naughty Naughty</h1>
+    <p class="lead">You shouldn't be here :(</p>
+    </div>
+}

@@ -30,13 +30,13 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("All Hotels", "Index", "Hotel_Data_")</li>
+                    <li>@Html.ActionLink("Book a Hotel", "Index", "Bookings")</li>
                     @if (User.IsInRole("Admin"))
                     {
                         <li>@Html.ActionLink("All Users", "Index", "AspNetUsers")</li>
-                        <li>@Html.ActionLink("Bulk Email", "BulkEmailList","AspNetUsers")</li>
-                        <li>@Html.ActionLink("Send Email", "Send_Email","Home")</li>
+                        <li>@Html.ActionLink("Bulk Email", "BulkEmailList", "AspNetUsers")</li>
+                        <li>@Html.ActionLink("Send Email", "Send_Email", "Home")</li>
                         //<li>@Html.ActionLink()</li>
                     }
                 </ul>
@@ -48,7 +48,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Shahrooq Pathan</p>
         </footer>
     </div>
 

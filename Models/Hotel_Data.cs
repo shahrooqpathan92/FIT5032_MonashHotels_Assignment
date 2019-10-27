@@ -30,5 +30,9 @@ namespace FIT5032_MonashHotels_Assignment.Models
 
         [StringLength(50)]
         public string hotel_address { get; set; }
+
+        public decimal? hotel_rating { get; set; }
+
+        public decimal? hotel_no_of_ratings { get; set; }
     }
 }

@@ -41,6 +41,8 @@
     </div>
 
 
+
+
     <!-- Booking End Date-->
     <div class="form-group">
         @Html.LabelFor(model => model.booking_end_date, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -98,6 +100,7 @@
             highlightWeek: true,
             numberOfMonths: 1,
             showAnim: "scale",
+            minDate: 0,
             showOptions: {
                 origin: ["top", "left"]
             },
@@ -114,6 +117,7 @@
             highlightWeek: true,
             numberOfMonths: 1,
             showAnim: "scale",
+            minDate: 0,
             showOptions: {
                 origin: ["top", "left"]
             },
