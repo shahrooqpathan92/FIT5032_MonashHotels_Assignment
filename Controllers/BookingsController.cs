@@ -100,10 +100,28 @@ namespace FIT5032_MonashHotels_Assignment.Controllers
                     bk.booking_end_date = (System.DateTime) booking.booking_end_date;
                     bk.user_id = User.Identity.GetUserId(); //booking.user_id;
 
+                    //Getting the hotel
+                    Hotel_Data hotel = dm.Hotel_Data.Find(booking.hotel_id);
 
-                    db.Bookings.Add(bk);
-                    db.SaveChanges();
-                    return RedirectToAction("Index");
+                    var newHotelCapacity = hotel.hotel_capacity - booking.booking_places;
+
+                    if (newHotelCapacity >= 0) {
+                        hotel.hotel_capacity = (int) newHotelCapacity;
+                        dm.SaveChanges();
+                        db.Bookings.Add(bk);
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        var model = new BookingViewModel
+                        {
+                            hotelList = dm.Hotel_Data.Select(p => new SelectListItem { Text = p.hotel_name, Value = p.hotel_id.ToString() }).ToList()
+                        };
+                        ViewBag.Failure = "Booking capacity reached for that hotel. please choose a different hotel.";
+                        return View(model);
+                    }
+                    
                 }
                 catch (Exception ex)
                 {
@@ -112,7 +130,7 @@ namespace FIT5032_MonashHotels_Assignment.Controllers
                     {
                         hotelList = dm.Hotel_Data.Select(p => new SelectListItem { Text = p.hotel_name, Value = p.hotel_id.ToString() }).ToList()
                     };
-                    ViewBag.Failure = "You already have a booking for that date. Please choose a different date";
+                    ViewBag.Failure = "You already have a booking for that date. Please choose a different date.";
                     return View(model);
                 }
             }
